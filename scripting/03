@@ -1,0 +1,23 @@
+#!/bin/bash
+if [ -z ${1} ]
+then
+	FILE="/home"
+else
+	FILE=$1
+fi
+
+if [ -z ${2} ]
+then
+	DEPTH=2
+else
+	DEPTH=$2
+fi
+
+if [ -z ${3} ]
+then
+	MAX=15
+else
+	MAX=$3
+fi
+
+du --max-depth=$DEPTH -ah $FILE | sort -rh | head -$MAX

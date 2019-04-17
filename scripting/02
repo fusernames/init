@@ -1,11 +1,16 @@
+#!/bin/bash
+
 USER=$1
 
-if [ $USER_DEL == root ]
+if [ $USER = "root" ]
 then
 	echo "You can't delete root"
+	exit
 else
 	killall -KILL -u $USER
 	pkill -KILL -u $USER
 	userdel -r $USER
 	rm -rf /home/$USER
+	echo "User maybe deleted"
+	exit
 fi
