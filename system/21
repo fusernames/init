@@ -1,0 +1,1 @@
+echo "grep home /etc/passwd | cut -d ':' -f1"
