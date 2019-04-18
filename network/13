@@ -1,0 +1,1 @@
+ipconfig getifaddr en0 | xargs nslookup | grep name | rev | cut -c 2- | rev | cut -d '=' -f2 | tr -d " "
